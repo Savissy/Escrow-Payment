@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coxygen Escrow Marketplace</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="module" src="/js/checkout.js"></script>
+</head>
+<body>
+    <div class="main-container">
+        <div class="container">
+            <img src="/images/coxygen.png" alt="Coxygen logo">
+            <div class="balance-card">
+                <h1>Secure ADA Escrow Marketplace</h1>
+            </div>
+        </div>
+        
+        <form id="checkoutForm">
+            <div class="container">
+                <div class="balance-card">
+                    <div>Available Balance:</div>
+                    <div id="adaBalance">Loading...</div>
+                </div>
+                
+                <div class="input-group">
+                    <label>Amount (ADA):</label>
+                    <input type="number" id="amount" placeholder="Enter amount" required>
+                </div>
+                
+                <div class="button-group">
+                    <button type="submit" class="send-button">Checkout with Escrow</button>
+                    <button type="button" id="confirmDelivery" class="confirm-button">
+                        Confirm Delivery Received
+                    </button>
+                </div>
+                
+                <div class="terms">
+                    Powered by Cardano Escrow Smart Contracts
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
