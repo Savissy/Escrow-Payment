@@ -1,0 +1,18 @@
+/* Add to existing styles */
+.confirm-button {
+    background: #4CAF50;
+    display: none;
+    margin-top: 15px;
+}
+
+#escrowDetails {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 8px;
+}
+
+#escrowAddress {
+    word-break: break-all;
+    font-family: monospace;
+}
