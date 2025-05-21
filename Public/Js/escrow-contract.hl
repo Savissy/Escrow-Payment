@@ -1,0 +1,25 @@
+spending escrow
+
+struct Datum {
+    seller: PubKeyHash
+    buyer: PubKeyHash
+    deadline: Int
+}
+
+enum Redeemer {
+    ConfirmDelivery { sig: ByteArray },
+    Timeout
+}
+
+func main(datum: Datum, redeemer: Redeemer, ctx: ScriptContext) -> Bool {
+    tx: Tx = ctx.tx;
+    current_time: Int = tx.time_range.start;
+    
+    redeemer.switch {
+        ConfirmDelivery: (sig) => 
+            sig.verify(datum.buyer, tx.id()),
+            
+        Timeout => 
+            current_time > datum.deadline
+    }
+}
